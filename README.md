@@ -109,7 +109,9 @@ Error bits:
 - PT-D600 seems to accept only TIFF-encoded raster data. Or perhaps you have to configure things
   in a different order to get it to accept raw binary data.
 
-- But TIFF-encoding allows for non-RLE data, with an extra byte
+- TIFF-encoding allows RLE-compression for repeated data, with a negative length byte
+
+- TIFF-encoding allows for random (non-RLE) data, with a postivie length byte
 
 - PT-D600 print-head seems to be 128 dots wide at 180 dpi, for a print width of 18 mm.
 
