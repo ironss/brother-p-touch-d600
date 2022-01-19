@@ -51,8 +51,8 @@ data = bytes.fromhex(
 
     "4D 02"         # M         Select compression mode - TIFF
 
-    "47 11 00   10   FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
-    "47 11 00   10   00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
+    "47 11 00   0F   FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
+    "47 11 00   0F   00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
     "47 11 00   10   FF 00 FF FF FF FF FF FF FF FF FF FF FF FF FF FF"
     "47 11 00   10   FF FF 00 FF FF FF FF FF FF FF FF FF FF FF FF FF"
     "47 11 00   10   FF FF FF 00 FF FF FF FF FF FF FF FF FF FF FF FF"
