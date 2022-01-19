@@ -100,6 +100,29 @@ Error bits:
 - `1B 69 53`: status request
 - `1B 69 58 47`: configuration request
 
+## Important discoveries
+
+- PT-D600 protocol seems to be similar to PT-P900.
+
+- See https://download.brother.com/welcome/docp100407/cv_ptp900_eng_raster_101.pdf
+
+- PT-D600 seems to accept only TIFF-encoded raster data. Or perhaps you have to configure things
+  in a different order to get it to accept raw binary data.
+
+- But TIFF-encoding allows for non-RLE data, with an extra byte
+
+- PT-D600 print-head seems to be 128 dots wide at 180 dpi, for a print width of 18 mm.
+
+- PT-D600 print-head does not need 'empty' dots at the start of each raster line. The first byte
+  of raster data is printed.
+
+- Each line of raster data must give 128 dots, for a total of 16 bytes.
+
+- Non-RLE data starts with the byte 16, then has the actual data bytes.
+
+- When sending the raster-data packet, the number of bytes sent is 17 (length + 16 bytes of data)
+
+
 ## Additional Resources
 
 http://www.undocprint.org/formats/page_description_languages/brother_p-touch
